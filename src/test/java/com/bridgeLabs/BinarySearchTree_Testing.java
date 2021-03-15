@@ -19,6 +19,14 @@ public class BinarySearchTree_Testing {
     public void Creating_BST_of3node() {
         tree.insert(root, 30);
         tree.insert(root, 70);
+        tree.preOrder(root);
+        Assertions.assertEquals(13, tree.size(root));
+    }
+    @Test
+    public void CreatingBST_of_N_node() {
+        setUp();
+        tree.insert(root, 30);
+        tree.insert(root, 70);
         tree.insert(root, 22);
         tree.insert(root, 40);
         tree.insert(root, 60);
@@ -32,6 +40,12 @@ public class BinarySearchTree_Testing {
 
         tree.preOrder(root);
         Assertions.assertEquals(13, tree.size(root));
+    }
+
+    @Test
+    public void seach_elementsInBST(){
+        CreatingBST_of_N_node();
+        Assertions.assertEquals(true, tree.search(root, 63));
     }
 
 }
